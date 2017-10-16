@@ -31,14 +31,14 @@ public:
 
   MatrixXd Q_;
 
-  ///* predicted sigma points matrix
-  MatrixXd Xsig_pred_;
-
   ///* R matrix for lidar
   MatrixXd R_lidar_;
 
   ///* R matrix for radar
   MatrixXd R_radar_;
+
+  ///* predicted sigma points matrix
+  MatrixXd Xsig_pred_;
 
   ///* time when the state is true, in us
   long long time_us_;
@@ -120,11 +120,6 @@ public:
    * @param meas_package The measurement at k+1
    */
   void UpdateRadar(MeasurementPackage meas_package);
-/*
-  float NormalizeAngle(float angle);
-
-  float Atan2M(float y, float x);
-  */
 };
 
 #endif /* UKF_H */
